@@ -11,7 +11,9 @@ class DelayedJobWeb < Sinatra::Base
   set :views,  File.expand_path('../views', __FILE__)
   set :haml, { :format => :html5 }
 
-  before_filter :authenticate_admin
+  before do
+    puts 'Hello'
+  end
 
   def current_page
     url_path request.path_info.sub('/','')
